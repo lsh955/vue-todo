@@ -10,7 +10,15 @@
       you can use custom content here to overwrite
       default content
       -->
-      <h3 slot="header">custom header</h3>
+      <h3 slot="header">
+        경고!
+        <i class="closeModalBts fas fa-times" @click="showModal = false"></i>
+      </h3>
+      <h3 slot="body">내용이 없습니다. 내용을 입력하세요!</h3>
+      <h3 slot="footer">
+        창을 닫을려면 확인 버튼을 누르세요!
+        <button class="modal-default-button" @click="$emit('close')">확인</button>
+      </h3>
     </Modal>
   </div>
 </template>
@@ -30,6 +38,8 @@ export default {
       if (this.newTodoItem !== "") {
         this.$emit("addTodoItem", this.newTodoItem);
         this.clearInput();
+      } else {
+        this.showModal = !this.showModal;
       }
     },
     clearInput: function() {
@@ -66,5 +76,8 @@ input:focus {
 .addBtn {
   color: white;
   vertical-align: middle;
+}
+.closeModalBts {
+  color: #42b983;
 }
 </style>
