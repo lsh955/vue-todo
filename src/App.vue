@@ -67,11 +67,13 @@ export default {
 <style>
 body {
   text-align: center;
+  font-family: "NanumGothicRegular", "NotoSansRegular", "Malgun Gothic",
+    "맑은 고딕", "Apple SD Gothic Neo", "Dotum", "Gulim", "Arial", sans-serif;
   background-color: #f6f6f6;
 }
 input {
   border-style: groove;
-  width: 88%;
+  width: 75%;
 }
 button {
   border-style: groove;

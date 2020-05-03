@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 .clearAllContainer {
-  width: 20rem;
+  width: 15rem;
   height: 50px;
   line-height: 53px;
   background-color: white;
