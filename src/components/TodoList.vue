@@ -29,7 +29,7 @@ export default {
       localStorage.removeItem(todoItem);
       this.todoItems.splice(index, 1);
     },
-    toggleComplete: function(todoItem, index) {
+    toggleComplete: function(todoItem) {
       todoItem.complete = !todoItem.complete;
       // 로컬 스토리지의 데이터를 갱신
       localStorage.removeItem(todoItem.item);
