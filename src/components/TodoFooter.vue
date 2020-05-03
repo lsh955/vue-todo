@@ -1,5 +1,5 @@
 <template>
-  <div class="clearAllContainer">
+  <div class="clearAllContainer shadow">
     <span class="clearAllBtn" v-on:click="clearTodo">Clear All</span>
   </div>
 </template>
@@ -8,7 +8,7 @@
 export default {
   methods: {
     clearTodo: function() {
-      this.$emit('clearAll');
+      this.$emit("clearAll");
     }
   }
 };
@@ -16,9 +16,9 @@ export default {
 
 <style scoped>
 .clearAllContainer {
-  width: 8.5rem;
+  width: 20rem;
   height: 50px;
-  line-height: 50px;
+  line-height: 53px;
   background-color: white;
   border-radius: 5px;
   margin: 0 auto;
