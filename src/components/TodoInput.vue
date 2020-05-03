@@ -16,14 +16,14 @@ export default {
   },
   methods: {
     addTodo: function() {
-      if (this.newTodoItem !== '') {
+      if (this.newTodoItem !== "") {
         var obj = { completed: false, item: this.newTodoItem };
         localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
         this.clearInput();
       }
     },
     clearInput: function() {
-      this.newTodoItem = '';
+      this.newTodoItem = "";
     }
   }
 };
@@ -37,6 +37,7 @@ input:focus {
   background: white;
   height: 50px;
   line-height: 50px;
+  margin-bottom: 35px;
   border-radius: 5px;
 }
 .inputBox input {
