@@ -42,7 +42,11 @@ export default {
     }
   },
   components: {
-    Modal: Modal
+    // 컴포넌트 태그명 : 컴포넌트 내용
+    // Modal: Modal
+
+    // 속성명의 축약
+    Modal
   }
 };
 </script>
