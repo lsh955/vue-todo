@@ -12,7 +12,9 @@
       <h3 slot="body">내용이 없습니다. 내용을 입력하세요!</h3>
       <h3 slot="footer">
         창을 닫을려면 확인 버튼을 누르세요!
-        <button class="modal-default-button" @click="$emit('close')">확인</button>
+        <button class="modal-default-button" @click="$emit('close')">
+          확인
+        </button>
       </h3>
     </Modal>
   </div>
@@ -25,13 +27,13 @@ export default {
   data() {
     return {
       newTodoItem: "",
-      showModal: false
+      showModal: false,
     };
   },
   methods: {
     addTodo() {
       if (this.newTodoItem !== "") {
-        this.$emit("addTodoItem", this.newTodoItem);
+        this.$store.commit("addOneItem", this.newTodoItem);
         this.clearInput();
       } else {
         this.showModal = !this.showModal;
@@ -39,15 +41,15 @@ export default {
     },
     clearInput() {
       this.newTodoItem = "";
-    }
+    },
   },
   components: {
     // 컴포넌트 태그명 : 컴포넌트 내용
     // Modal: Modal
 
     // 속성명의 축약
-    Modal
-  }
+    Modal,
+  },
 };
 </script>
 
