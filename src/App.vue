@@ -20,7 +20,7 @@ import TodoFooter from "./components/TodoFooter.vue";
 export default {
   data() {
     return {
-      todoItems: []
+      todoItems: [],
     };
   },
   methods: {
@@ -42,7 +42,7 @@ export default {
     clearAllItems() {
       localStorage.clear();
       this.todoItems = [];
-    }
+    },
   },
   created() {
     if (localStorage.length > 0) {
@@ -63,8 +63,8 @@ export default {
     TodoHeader,
     TodoInput,
     TodoList,
-    TodoFooter
-  }
+    TodoFooter,
+  },
 };
 </script>
 
