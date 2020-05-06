@@ -1,8 +1,9 @@
+<!-- 자바스크립트 연산, 전체적인 속성들을 줄이는 방향으로 템플릿을 깔끔히 하는게 Vue.js에서 권장 -->
 <template>
   <div>
     <transition-group name="list" tag="ul">
       <li
-        v-for="(todoItem, index) in this.$store.state.todoItems"
+        v-for="(todoItem, index) in this.storedTodoItems"
         v-bind:key="todoItem.item"
         class="shadow"
       >
@@ -23,6 +24,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   methods: {
     removeTodo(todoItem, index) {
@@ -32,6 +35,12 @@ export default {
       this.$store.commit("toggleOneItem", { todoItem, index });
     },
   },
+  computed: {
+    // todoItems() {
+    //   return this.$store.getters.storedTodoItems;
+    // }
+    ...mapGetters(['storedTodoItems'])
+  }
 };
 </script>
 
