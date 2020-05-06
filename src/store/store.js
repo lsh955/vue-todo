@@ -18,11 +18,14 @@ const storage = {
 };
 
 export const store = new Vuex.Store({
-  state: {
+  state: {      // 프로젝트에서 공통으로 사용할 변수를 정의(여러 컴포넌트에 공유되는 데이터)
     todoItems: storage.fetch(),
   },
-  mutations: {
-    addOneItem(state, todoItem) {
+  mutations: {  // state를 변경시키는 역활(Mutations을 통해서만 state를 변경해야 한다.)
+    // Mutitions내에 있는 함수의 인자는 state와 payload
+    // 기본 인자는 state 사용 commit으로 넘어온 전달 인자는 payload 사용
+    // payload는 여러개를 묶은 객체 형태로 전달 될 수 있다.
+    addOneItem(state, todoItem) { 
       const obj = { completed: false, item: todoItem };
       localStorage.setItem(todoItem, JSON.stringify(obj));
       state.todoItems.push(obj);
